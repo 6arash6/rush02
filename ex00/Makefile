@@ -1,0 +1,1 @@
+//Build script - Compiles all .c files into the executable rush-02.

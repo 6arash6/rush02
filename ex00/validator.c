@@ -1,0 +1,1 @@
+//Input validation - Checks if the input is a valid number (only digits, no negatives, no decimals).

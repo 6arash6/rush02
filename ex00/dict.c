@@ -1,0 +1,1 @@
+//Dictionary parser - Opens and reads the numbers.dict file, parses "key: value" lines, stores them in a linked list.

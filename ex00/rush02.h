@@ -1,0 +1,1 @@
+//Header file - Contains all function prototypes and the struct definition. Include this in every .c file.

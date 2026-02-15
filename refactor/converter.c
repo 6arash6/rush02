@@ -80,18 +80,18 @@ int	convert(char *nbr, t_dict *dict)
 	int		group;
 	char	*val;
 
-
 	nbr = skip_zeros(nbr);
 	len = ft_strlen(nbr);
 	if (len == 1 && nbr[0] == '0')
 	{
-
 		val = dict_get(dict, "0");
 		if (!val)
 			return (0);
 		ft_putstr(val);
 		return (1);
 	}
+	if (!check_scales(len, dict))
+		return (0);
 	group = (len + 2) / 3 - 1;
 	return (convert_loop(nbr, len, group, dict));
 }

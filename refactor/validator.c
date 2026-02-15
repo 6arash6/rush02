@@ -29,3 +29,19 @@ int	is_valid(char *str)
 	}
 	return (1);
 }
+
+int	check_scales(int len, t_dict *dict)
+{
+	int		group;
+	char	scale[100];
+
+	group = (len + 2) / 3 - 1;
+	while (group > 0)
+	{
+		build_scale(scale, group);
+		if (!dict_get(dict, scale))
+			return (0);
+		group--;
+	}
+	return (1);
+}

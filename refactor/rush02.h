@@ -35,6 +35,7 @@ void	ft_putstr(char *str);
 
 /* Validator */
 int		is_valid(char *str);
+int		check_scales(int len, t_dict *dict);
 
 /* Dictionary */
 char	*read_dict_file(char *file);

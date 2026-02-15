@@ -22,6 +22,7 @@ void	ft_putstr(char *str);
 
 /* Validator */
 int		is_valid(char *str);
+int		validate_conversion(char *nbr, t_dict *dict);
 
 /* Dictionary */
 t_dict	*load_dict(char *file);
@@ -30,6 +31,8 @@ void	dict_free(t_dict *dict);
 
 /* Converter */
 int		convert(char *nbr, t_dict *dict);
+char	*skip_zeros(char *str);
+void	build_scale(char *key, int group);
 
 /* BONUS 3: stdin reading */
 // void	read_and_convert_stdin(t_dict *dict);

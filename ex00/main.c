@@ -38,6 +38,15 @@ int	main(int ac, char **av)
 		ft_putstr("Dict Error\n");
 		return (1);
 	}
+	
+	// Validate dictionary has all needed entries BEFORE converting
+	if (!validate_conversion(number, dict))
+	{
+		ft_putstr("Dict Error\n");
+		dict_free(dict);
+		return (1);
+	}
+	
 	if (!convert(number, dict))
 	{
 		ft_putstr("Dict Error\n");

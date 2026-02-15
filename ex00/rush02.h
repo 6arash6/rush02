@@ -2,40 +2,36 @@
 #ifndef RUSH02_H
 # define RUSH02_H
 
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdlib.h>
 # include <fcntl.h>
 
-# define BUFFER_SIZE 4096
-
-typedef struct s_dict_entry
+typedef struct s_dict
 {
-	char				*key;
-	char				*value;
-	struct s_dict_entry	*next;
+	char			*key;
+	char			*value;
+	struct s_dict	*next;
 }	t_dict;
 
-// String utilities
+/* String utils */
 int		ft_strlen(char *str);
 int		ft_strcmp(char *s1, char *s2);
-int		ft_atoi(char *str);
-int		is_digit(char c);
-int		is_space(char c);
+char	*ft_strdup(char *str);
+int		ft_isdigit(char c);
+void	ft_putstr(char *str);
 
-// Number validation
-int		is_valid_number(char *str);
+/* Validator */
+int		is_valid(char *str);
 
-// Dictionary functions
-t_dict	*parse_dictionary(char *filename);
-char	*get_dict_value(t_dict *dict, char *key);
-void	free_dict(t_dict *dict);
-t_dict	*create_entry(char *key, char *value);
-void	add_entry(t_dict **dict, t_dict *entry);
+/* Dictionary */
+t_dict	*load_dict(char *file);
+char	*dict_get(t_dict *dict, char *key);
+void	dict_free(t_dict *dict);
 
-// Number conversion
+/* Converter */
+int		convert(char *nbr, t_dict *dict);
 
-// File reading
-char	*read_file(char *filename);
-
+/* BONUS 3: stdin reading */
+// void	read_and_convert_stdin(t_dict *dict);
 
 #endif
